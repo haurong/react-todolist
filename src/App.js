@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import TaskList from './TaskList';
+import AddTask from './AddTask';
+import styled from 'styled-components';
+import './app.css';
+
+
+const Wrapper = styled.div`
+  background-color: #FEEED8;
+  height: 100vh;
+  padding-top: 70px;
+`;
+
+const Title = styled.h1`
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #5D4037;
+  
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Wrapper>
+        <Title>ToDoList</Title>
+        <AddTask/>
+        <TaskList/>
+      </Wrapper>
   );
 }
+
 
 export default App;
