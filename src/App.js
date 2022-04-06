@@ -18,6 +18,7 @@ const Title = styled.h1`
   letter-spacing: 1px;
   color: #5D4037;
   
+  
 `;
 
 function App() {
