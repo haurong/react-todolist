@@ -1,6 +1,6 @@
 import * as types from '../actions/ActionTypes';
 
-export default function todos(state = initialTasks, actions) {
+export default function todos(state = initialTasks, action) {
     switch (action.type){
         default:
             return state;

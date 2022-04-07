@@ -41,11 +41,14 @@ const Button = styled.div`
 
 
 
-function TaskItem(){
+function TaskItem(props){
     return(
         <Wrapper>
-            <Checkbox type='checkbox' />
-            <TaskName>New Task</TaskName>
+            <Checkbox
+            type='checkbox' 
+            checked={props.task.isCompleted}
+            />
+            <TaskName>{props.task.taskName}</TaskName>
             <Button>✕</Button>
         </Wrapper>
     );
