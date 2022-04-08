@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import * as actions from './actions/todos'
 
 const Wrapper = styled.div`
     display: flex;
@@ -37,13 +40,30 @@ const AddBtn = styled.button`
 
 
 function AddTask(){
+    const dispatch = useDispatch();
+
+    const [ newTask, setnewTask ] = useState("");
+
+    const handleChange = ( event ) => {
+        setnewTask( event.target.value );
+    };
+
+    const handleClick = ( event ) =>{
+        if(newTask === "") return;
+        dispatch(actions.addTask(newTask));
+        setnewTask("");
+        };
+
     return(
         <Wrapper>
             <Input
+                name='addtask'
                 type='text'
                 placeholder={'Add new task...'}
+                value={newTask}
+                onChange={handleChange}
             />
-            <AddBtn>
+            <AddBtn onClick={() => handleClick()}>
                 +
             </AddBtn>
         </Wrapper>
