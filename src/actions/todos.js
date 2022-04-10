@@ -1,9 +1,29 @@
-import { type } from '@testing-library/user-event/dist/type';
 import * as types from './ActionTypes';
 
 export function addTask (taskName){
     return{
         type: types.ADD_TASK,
         taskName
+    };
+}
+
+export function editTask (idx){
+    return{
+        type: types.EDIT_TASK,
+        idx
+    }
+}
+
+export function deleteTask(idx){
+    return{
+        type: types.DELETE_TASK,
+        idx
+    };
+}
+
+export function toggleTask(idx){
+    return{
+        type: types.TOGGLE_TASK,
+        idx
     };
 }

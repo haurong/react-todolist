@@ -1,4 +1,4 @@
-import { type } from '@testing-library/user-event/dist/type';
+
 import * as types from '../actions/ActionTypes';
 
 
@@ -12,12 +12,21 @@ export default function todos(state = initialTasks, action) {
     switch (action.type){
         case types.ADD_TASK:
             return[
-                ... state,
+                ...state,
                 {
                     taskName: action.taskName,
                     isCompleted: false,
                 },
             ];
+        case types.DELETE_TASK:
+            return[
+                ...state.slice(0,action.idx),
+                ...state.slice(action.idx + 1)
+            ];
+        case types.TOGGLE_TASK:
+            let newState = [...state];
+            newState[action.idx].isCompleted = !newState[action.idx].isCompleted;
+            return newState;
         default:
             return state;
     }

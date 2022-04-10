@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { useDispatch } from 'react-redux';
+import editIcon from './icon/edit.png'
+import * as actions from './actions/todos';
 
 const Wrapper = styled.div`
     background-color: #FFF7EB;
@@ -21,6 +24,21 @@ const TaskName = styled.div`
     flex-grow: 1;
     margin: 0 20px;
 `;
+
+const EditBtn =styled.div`
+    margin:2px 20px;
+    border:none;
+    height:20px;
+    width:20px;
+    background-color: inherit;
+
+    img {
+        height: 18px;
+        width: 18px;
+        cursor: pointer;
+    }
+`;
+
 const Button = styled.div`
     font-family: "Noto Sans TC", sans-serif;
     font-size: 12px;
@@ -41,15 +59,23 @@ const Button = styled.div`
 
 
 
+
 function TaskItem(props){
+
+    const dispatch = useDispatch();
+
     return(
         <Wrapper>
             <Checkbox
             type='checkbox' 
             checked={props.task.isCompleted}
+            onChange={ () => dispatch(actions.toggleTask(props.task.idx)) }
             />
             <TaskName>{props.task.taskName}</TaskName>
-            <Button>✕</Button>
+            <EditBtn>
+                <img src={editIcon} alt="" />
+            </EditBtn>
+            <Button onClick={ () => dispatch(actions.deleteTask(props.task.idx))} >✕</Button>
         </Wrapper>
     );
 }
