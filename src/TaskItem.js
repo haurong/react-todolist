@@ -72,7 +72,7 @@ function TaskItem(props){
             onChange={ () => dispatch(actions.toggleTask(props.task.idx)) }
             />
             <TaskName>{props.task.taskName}</TaskName>
-            <EditBtn>
+            <EditBtn onChange={ () => dispatch(actions.editTask(props.task.idx)) }>
                 <img src={editIcon} alt="" />
             </EditBtn>
             <Button onClick={ () => dispatch(actions.deleteTask(props.task.idx))} >✕</Button>

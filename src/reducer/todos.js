@@ -3,9 +3,9 @@ import * as types from '../actions/ActionTypes';
 
 
 const initialTasks = [
-    { taskName: 'task1',isCompleted: false },
-    { taskName: 'task2',isCompleted: true },
-    { taskName: 'task3',isCompleted: false },
+    { taskName: 'task1',isCompleted: false ,id: "todo-1" },
+    { taskName: 'task2',isCompleted: true , id: "todo-2" },
+    { taskName: 'task3',isCompleted: false , id: "todo-3" },
 ];
 
 export default function todos(state = initialTasks, action) {
@@ -23,6 +23,14 @@ export default function todos(state = initialTasks, action) {
                 ...state.slice(0,action.idx),
                 ...state.slice(action.idx + 1)
             ];
+        // case types.EDIT_TASK:
+        //     const editedTaskList = initialTasks.map (task =>{
+        //         if (id === task.id){
+        //             return {...state, taskName: newState}
+        //         }
+        //         return editedTaskList;
+        //     });
+        //     break;
         case types.TOGGLE_TASK:
             let newState = [...state];
             newState[action.idx].isCompleted = !newState[action.idx].isCompleted;
