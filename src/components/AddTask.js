@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import * as actions from './actions/todos'
+import * as actions from '../actions/todos'
 
 const Wrapper = styled.div`
     display: flex;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import * as actions from "./actions/filter";
+import * as actions from "../actions/filter";
 
 const ButtonContainer = styled.div`
     display: flex;

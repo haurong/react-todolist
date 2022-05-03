@@ -1,7 +1,7 @@
 import TaskList from './TaskList';
 import AddTask from './AddTask';
 import styled from 'styled-components';
-import './app.css';
+import '../app.css';
 
 
 const Wrapper = styled.div`

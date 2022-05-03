@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useDispatch } from 'react-redux';
-import editIcon from './icon/edit.png'
-import * as actions from './actions/todos';
+import editIcon from '../icon/edit.png'
+import * as actions from '../actions/todos';
 
 const Wrapper = styled.div`
     background-color: #FFF7EB;
