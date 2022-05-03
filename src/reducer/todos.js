@@ -30,7 +30,7 @@ export default function todos(state = initialTasks, action) {
         //         }
         //         return editedTaskList;
         //     });
-        //     break;
+            break;
         case types.TOGGLE_TASK:
             let newState = [...state];
             newState[action.idx].isCompleted = !newState[action.idx].isCompleted;
