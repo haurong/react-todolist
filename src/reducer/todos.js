@@ -23,17 +23,6 @@ export default function todos(state = initialTasks, action) {
                 ...state.slice(0,action.idx),
                 ...state.slice(action.idx + 1)
             ];
-        // case types.EDIT_TASK:
-        //     function editTask(id, newName) {
-        //         const editedTaskList = state.map(task => {
-        //           if (id === state.id) {
-        //             return {...state, name: newName}
-        //           }
-        //           return state;
-        //         });
-        //         setTasks(editedTaskList);
-        //       }
-        //       break;
         
         case types.TOGGLE_TASK:
             let newState = [...state];

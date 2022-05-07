@@ -7,13 +7,6 @@ export function addTask (taskName){
     };
 }
 
-// export function editTask (idx){
-//     return{
-//         type: types.EDIT_TASK,
-//         idx
-//     }
-// }
-
 export function deleteTask(idx){
     return{
         type: types.DELETE_TASK,
