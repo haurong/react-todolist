@@ -2,7 +2,7 @@
   "name": "react_todolist",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://haurong.github.io/react_todolist",
+  "homepage": "https://haurong.github.io/react-todolist/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
