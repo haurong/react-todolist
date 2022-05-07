@@ -3,9 +3,9 @@ import * as types from '../actions/ActionTypes';
 
 
 const initialTasks = [
-    { taskName: '學習react',isCompleted: false ,id: "todo-1" },
-    { taskName: '複習js',isCompleted: true , id: "todo-2" },
-    { taskName: '練習套件',isCompleted: false , id: "todo-3" },
+    { taskName: 'task1',isCompleted: false ,id: "todo-1" },
+    { taskName: 'task2',isCompleted: true , id: "todo-2" },
+    { taskName: 'task3',isCompleted: false , id: "todo-3" },
 ];
 
 export default function todos(state = initialTasks, action) {
